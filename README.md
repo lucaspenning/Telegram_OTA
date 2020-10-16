@@ -26,3 +26,8 @@ Serão justamente respostas aos comandos de entradas listados acima:
   * Reiniciar = reinicia embarcado e retorna status;
   * Log = informações do embarcado, exemplo: memoria, processamento, etc...;
 
+## Funcionalidades
+  * Monitoramento: iremos conseguir monitorar o status e logs do embarcado pelo celular, através das entradas e saídas descritas acima, evitando assim deslocamento até o mesmo;
+  * Controle: iremos conseguir mandar comandos para ser realizados pelo embarcado, e obteremos o retorno de valores e status avisando se ocorreu tudo bem na realização da tarefa;
+  * Atualizado: com a implementação do OTA, sempre que obtermos um nova atualização ao ser reiniciado o embarcado irá se encarregar de fazer automaticamente, além de uma rotina de verificações que manterão embarcado sempre atualizado caso seja feita a necessidade de seu funcionamento a todo momento, ou se atualizar até mesmo por comando feito pelo Telegram;
+  * Sensoriamento: teremos os valores do sensor pretendido sempre que desejado, muito rapidamente, ou iremos receber um aviso em forma de notificação no Telegram caso algum sensor retorne valores indesejados;

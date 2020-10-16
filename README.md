@@ -3,7 +3,7 @@
 Integrar atualizações OTA(Over-The-Air) juntamente com o Telegram que é um serviço de mensagens instantâneas, onde serão mandados comandos específicos por meio do Telegram e o embarcado irá responder conforme o comando solicitado ou retornara algum erro. Além disso será implementado rotina de atualizações OTA, após ser reiniciado ou caso o embarcado permaneça muito tempo ligado. Também irá sem empregado sensor para monitorar temparatura e humidade a fins de demosntração para funcionalidades.
 
 ## Entradas
-  * Energia 5V;
+  * Alimentação de 5V;
   * Conexão Wifi;
   * Sensor de temperatura;
   * Sensor de humidade;

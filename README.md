@@ -14,4 +14,15 @@ São comandos dados através do Telegram, além de um Sensor de Temperatura e hu
   * Reiniciar: embarcado será reiniciado;
   * Log: serão enviados periodicamente informações do embarcado;
 
-## Saida
+## Saídas
+Serão justamente respostas aos comandos de entradas listados acima:
+  * Uptime = X horas em atividade;
+  * Version = versão do software X.X;
+  * Sensores = Exemplo: Temperatura e Humidade;
+  * Horário = HH:MM:SS;
+  * Temperatura = XX °C;
+  * Humidade = XX%;
+  * Atualizar = atualiza o embarcado e retorna status;
+  * Reiniciar = reinicia embarcado e retorna status;
+  * Log = informações do embarcado, exemplo: memoria, processamento, etc...;
+

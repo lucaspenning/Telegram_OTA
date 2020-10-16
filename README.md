@@ -17,7 +17,6 @@ Integrar atualizações OTA(Over-The-Air) juntamente com o Telegram que é um se
   * Envio de dados solicitados;
 
 ## Funcionalidades
-São comandos dados através do Telegram, são eles:  
   * Uptime: tempo em atividade do embarcado;
   * Version: verifica a versão do software do embarcado;
   * Sensores: sensores instalados no embarcado;

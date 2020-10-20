@@ -33,6 +33,6 @@ Integrar atualizações OTA(Over-The-Air) juntamente com o Telegram que é um se
   * Serão enviadas a cada X minutos as medições do sensores para o BoT Telegram
   * Registrar no embarcado o histórico das atualizações: versão e data
   * Registrar no embarcado um log das últimas 24h das medições feitas pelos sensores
-  * Por solicitação será enviado o log das últimas 24h das mediç
-
+  * Por solicitação será enviado o log das últimas 24h das medições feitas
+  * Por solicitação será enviado o histórico das atualizações
  

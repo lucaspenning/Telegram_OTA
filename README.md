@@ -30,4 +30,9 @@ Integrar atualizações OTA(Over-The-Air) juntamente com o Telegram que é um se
   * Umidade: retorna à Umidade ambiente;
   * Atualizar: embarcado irá se atualizar imediatamente;
   * Reiniciar: embarcado será reiniciado;
-  * Log: serão enviados periodicamente informações do embarcado;
+  * Serão enviadas a cada X minutos as medições do sensores para o BoT Telegram
+  * Registrar no embarcado o histórico das atualizações: versão e data
+  * Registrar no embarcado um log das últimas 24h das medições feitas pelos sensores
+  * Por solicitação será enviado o log das últimas 24h das mediç
+
+ 

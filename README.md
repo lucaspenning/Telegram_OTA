@@ -36,4 +36,6 @@ Integrar atualizações OTA(Over-The-Air) juntamente com o Telegram que é um se
   * Registrar no embarcado um log das últimas 24h das medições feitas pelos sensores
   * Por solicitação será enviado o log das últimas 24h das medições feitas
   * Por solicitação será enviado o histórico das atualizações
- 
+
+## Diagrama UML de Funcionamento
+ ![Imagens/Diagrama UML.png]

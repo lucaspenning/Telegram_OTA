@@ -38,4 +38,4 @@ Integrar atualizações OTA(Over-The-Air) juntamente com o Telegram que é um se
   * Por solicitação será enviado o histórico das atualizações
 
 ## Diagrama UML de Funcionamento
- ![Imagens/Diagrama UML.png]
+![alt text](https://github.com/lucaspenning/Telegram_OTA/blob/main/Imagens/Diagrama%20UML.png)

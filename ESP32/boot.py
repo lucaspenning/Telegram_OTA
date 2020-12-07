@@ -27,7 +27,7 @@ def sub_cb(topic, msg):
   arquivo.close()
 
 #Configurar o Broker MQTT
-mq = MQTTClient("AtualizacaoOTA","mqtt.dioty.co",1883,"lucas.penning@sou.ucpel.edu.br","ae8d0e1c")
+mq = MQTTClient("AtualizacaoOTA","Broker",1883,"Usuario","Senha")
 mq.set_callback(sub_cb) 
 
 
@@ -61,7 +61,7 @@ def ver_atualizacao():
       arquivo_h.close()
       #Conectando ao Broker MQTT e publicando 
       mq.connect()
-      mq.publish(b"/lucas.penning@sou.ucpel.edu.br/",b"Sistema reiniciado, NOVO atualizacao, versao "+str(version_v))
+      mq.publish(b"Topico",b"Sistema reiniciado, NOVO atualizacao, versao "+str(version_v))
       utime.sleep(1)
       #Rotina de piscagem do LED AMARELO
       pin17.value(1)
@@ -75,7 +75,7 @@ def ver_atualizacao():
       print("Sem novas atualizacoes")
       #Conectando ao Broker MQTT e publicando
       mq.connect()
-      mq.publish(b"/lucas.penning@sou.ucpel.edu.br/",b"Sistema reiniciado, SEM atualizar, versao "+str(version))
+      mq.publish(b"Topico",b"Sistema reiniciado, SEM atualizar, versao "+str(version))
       utime.sleep(1)
       #Rotina de piscagem do LED AMARELO
       pin17.value(1)
@@ -113,7 +113,7 @@ def escutando():
     comprimento = len(linha)
     palavra = linha[2:comprimento-1]
     print("Comando:" + palavra)
-    mq.subscribe(topic="/lucas.penning@sou.ucpel.edu.br/")
+    mq.subscribe(topic="Topico")
     if(palavra != ''):
       arquivo = open('comando.txt', 'w')
       arquivo.write('')
@@ -121,7 +121,7 @@ def escutando():
     if(palavra == 'version'):
       #Conectando ao Broker MQTT e publicando 
       mq.connect()
-      mq.publish(b"/lucas.penning@sou.ucpel.edu.br/",b""+str(version_v))
+      mq.publish(b"Topico",b""+str(version_v))
       utime.sleep(1)
     if(palavra == 'reiniciar'):
       arquivo = open('comando.txt', 'w')
@@ -139,15 +139,15 @@ def escutando():
       min = horario_embarcado[5]
       seg = horario_embarcado[6]
       mq.connect()
-      mq.publish(b"/lucas.penning@sou.ucpel.edu.br/",b""+str(dia)+"/"+str(mes)+"/"+str(ano)+" - "+str(hrs)+":"+str(min)+":"+str(seg))
+      mq.publish(b"Topico",b""+str(dia)+"/"+str(mes)+"/"+str(ano)+" - "+str(hrs)+":"+str(min)+":"+str(seg))
       utime.sleep(1)
     if(palavra == 'uptime'):
       mq.connect()
-      mq.publish(b"/lucas.penning@sou.ucpel.edu.br/",b""+str(dia_a)+"/"+str(mes_a)+"/"+str(ano_a)+" - "+str(hrs_a)+":"+str(min_a)+":"+str(seg_a))
+      mq.publish(b"Topico",b""+str(dia_a)+"/"+str(mes_a)+"/"+str(ano_a)+" - "+str(hrs_a)+":"+str(min_a)+":"+str(seg_a))
       utime.sleep(1)
     if(palavra == 'atualizar'):
       mq.connect()
-      mq.publish(b"/lucas.penning@sou.ucpel.edu.br/",b"Software atualizado")
+      mq.publish(b"Topico",b"Software atualizado")
       utime.sleep(1)
       atualiza_ota()
     if(palavra == 'sensores'):
@@ -155,7 +155,7 @@ def escutando():
       file_json = ujson.loads(file.read())
       sensores = file_json['sensores']['tipo']
       mq.connect()
-      mq.publish(b"/lucas.penning@sou.ucpel.edu.br/",b""+str(sensores))
+      mq.publish(b"Topico",b""+str(sensores))
       utime.sleep(1)
     if(palavra == 'temperatura'):
       val_t = 0
@@ -165,7 +165,7 @@ def escutando():
       last_line = file_lines[len(file_lines)-1]
       val_t = last_line[6:10]
       mq.connect()
-      mq.publish(b"/lucas.penning@sou.ucpel.edu.br/",b""+str(val_t))
+      mq.publish(b"Topico",b""+str(val_t))
       utime.sleep(1)
     if(palavra == 'umidade'):
       val_u = 0
@@ -175,28 +175,28 @@ def escutando():
       last_line = file_lines[len(file_lines)-1]
       val_u = last_line[6:10]
       mq.connect()
-      mq.publish(b"/lucas.penning@sou.ucpel.edu.br/",b""+str(val_u))
+      mq.publish(b"Topico",b""+str(val_u))
       utime.sleep(1)
     if(palavra == 'logt'):  
       arquivo = open('sensor_temperatura.txt', 'r')
       unica_string = arquivo.read()
       arquivo.close()
       mq.connect()
-      mq.publish(b"/lucas.penning@sou.ucpel.edu.br/",b""+str(unica_string))
+      mq.publish(b"Topico",b""+str(unica_string))
       utime.sleep(1)
     if(palavra == 'logu'):  
       arquivo = open('sensor_umidade.txt', 'r')
       unica_string = arquivo.read()
       arquivo.close()
       mq.connect()
-      mq.publish(b"/lucas.penning@sou.ucpel.edu.br/",b""+str(unica_string))
+      mq.publish(b"Topico",b""+str(unica_string))
       utime.sleep(1)
     if(palavra == 'hist'):  
       arquivo = open('historico.txt', 'r')
       unica_string = arquivo.read()
       arquivo.close()
       mq.connect()
-      mq.publish(b"/lucas.penning@sou.ucpel.edu.br/",b""+str(unica_string))
+      mq.publish(b"Topico",b""+str(unica_string))
       utime.sleep(1)
     if(palavra == 'parametro'):  
       arquivo = open('tempo.txt', 'r')
@@ -210,7 +210,7 @@ def escutando():
       arquivo_h.write(str(r))
       arquivo_h.close()
       mq.connect()
-      mq.publish(b"/lucas.penning@sou.ucpel.edu.br/",b"Tempo de leitura:"+str(r))
+      mq.publish(b"Topico",b"Tempo de leitura:"+str(r))
       utime.sleep(1)
  
 #Definindo Horário via NTP
